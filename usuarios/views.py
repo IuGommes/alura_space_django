@@ -23,7 +23,7 @@ def login(request):
 
         if usuario is not None:
             auth.login(request, usuario)
-            messages.success(request, 'Usuário logado com sucesso!')
+            messages.success(request, f'{nome} logado com sucesso!')
             return redirect('index')
         else:
             messages.error(request, 'Usuário não encontrado')
@@ -63,5 +63,5 @@ def cadastro(request):
 
 def logout(request):
     auth.logout(request)
-    messages.success(request, 'logout efetuado com sucesso!')
+    messages.success(request, 'Logout efetuado com sucesso!')
     return redirect('login')
